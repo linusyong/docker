@@ -1,0 +1,39 @@
+server {
+	listen 80 default_server;
+
+	root /var/www/html;
+
+	index index.html index.htm index.php index.nginx-debian.html;
+
+	server_name _;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+	
+	location ~ \.php$ {
+		fastcgi_index index.php;
+		fastcgi_pass 10.1.0.54:9000;
+		include fastcgi_params;
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+		fastcgi_param SCRIPT_NAME $fastcgi_script_name;
+	}
+
+#	location ~ \.php$ {
+#		include snippets/fastcgi-php.conf;
+#	
+#		# With php5-cgi alone:
+#		fastcgi_pass 127.0.0.1:9000;
+#		# With php5-fpm:
+#		# fastcgi_pass unix:/var/run/php5-fpm.sock;
+#	}
+
+	# deny access to .htaccess files, if Apache's document root
+	# concurs with nginx's one
+
+	location ~ /\.ht {
+		deny all;
+	}
+}
