@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -rf nginx/exports/log/*
+
 docker_image=$(docker images -q nginx)
 if [ "$docker_image" ]
 then
