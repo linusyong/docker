@@ -33,7 +33,7 @@ EXPOSE 80
 EXPOSE 443
 
 # Define mountable directories
-VOLUME [ "/usr/share/nginx/html", "/etc/nginx", "/var/log/nginx" ]
+VOLUME [ "/etc/nginx", "/var/log/nginx" ]
 
 # Define working directory
 WORKDIR /etc/nginx

@@ -31,7 +31,7 @@ COPY php-fpm.service /etc/service/php-fpm/run
 EXPOSE 9000
 
 # Define mountable directories
-VOLUME [ "/usr/share/nginx/html", "/etc/php5" ]
+VOLUME [ "/etc/php5" ]
 
 # Define working directory
 #WORKDIR /etc/nginx
