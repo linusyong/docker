@@ -11,7 +11,7 @@ fi
 ## now run nginx docker container
 #
 # --name nginx : name the docker container nginx
-# --net=host : using host network so that nginx and php-fpm can communcation thru 127.0.0.1:9000
+# --link php-fpm:php-fpm : link to php-fpm container
 # --volume /home/core/docker/nginx-php-fpm/exports/html:/var/www/html : export volume for php / html files
 # --volume /home/core/docker/nginx-php-fpm/nginx/exports/etc:/etc/nginx : export volume for nginx configuration files
 # --volume /home/core/docker/nginx-php-fpm/nginx/exports/log:/var/log/nginx : export volume for nginx logs
@@ -22,8 +22,8 @@ fi
 echo -n "Running container: "
 docker run \
   --name nginx \
-  --net=host \
-  --volume /home/core/docker/nginx-php-fpm/exports/html:/var/www/html \
+  --link php-fpm:php-fpm \
+  --volumes-from php-fpm \
   --volume /home/core/docker/nginx-php-fpm/nginx/exports/etc:/etc/nginx \
   --volume /home/core/docker/nginx-php-fpm/nginx/exports/log:/var/log/nginx \
   --publish 80:80 \
