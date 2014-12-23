@@ -1,6 +1,7 @@
 #!/bin/bash
 
 rm -rf nginx/exports/log/*
+./stop_dockers.sh
 
 docker_image=$(docker images -q nginx)
 if [ "$docker_image" ]

@@ -11,5 +11,5 @@ if [ "$x_powered_by" ]
 then
   echo -e "\nDocker containers are ready\n"
 else
-  echo -e "\nDocker containers not run properly\n"
+  echo -e "\nDocker containers not running properly\n"
 fi
