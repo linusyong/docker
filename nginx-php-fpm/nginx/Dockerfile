@@ -1,7 +1,7 @@
 # Nginx: Dockerfile for Nginx image
 # Based on phusion/baseimage
 #
-# Version Nginx 1.7.7 build version 0
+# Version Nginx 1.6.2
 #
 # Author "Linus Yong" <linusyong@gmail.com>
 #

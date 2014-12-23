@@ -1,7 +1,7 @@
 # Nginx: Dockerfile for PHP-FPM image
 # Based on phusion/baseimage
 #
-# Version 5.4 build 0
+# Version 5.5.9
 #
 # Author "Linus Yong" <linusyong@gmail.com>
 #

@@ -7,12 +7,12 @@ docker_image=$(docker images -q nginx)
 if [ "$docker_image" ]
 then
   docker rmi $docker_image
-  docker build --rm -t nginx nginx
+  docker build --rm -t nginx:1.6.2 nginx
 fi
 
 docker_image=$(docker images -q php-fpm)
 if [ "$docker_image" ]
 then
   docker rmi $docker_image
-  docker build --rm -t php-fpm php-fpm
+  docker build --rm -t php-fpm:5.5.9 php-fpm
 fi

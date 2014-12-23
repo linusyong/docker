@@ -16,7 +16,7 @@ fi
 # --volume /home/core/docker/nginx-php-fpm/nginx/exports/etc:/etc/nginx : export volume for nginx configuration files
 # --volume /home/core/docker/nginx-php-fpm/nginx/exports/log:/var/log/nginx : export volume for nginx logs
 # --publish 80:80 : publish port 80 of container to port 80 of host
-# --detach nginx:latest : run detached and using nginx:latest docker image
+# --detach nginx:1.6.2 : run detached and using nginx:latest docker image
 #
 
 echo -n "Running container: "
@@ -27,4 +27,4 @@ docker run \
   --volume /home/core/docker/nginx-php-fpm/nginx/exports/etc:/etc/nginx \
   --volume /home/core/docker/nginx-php-fpm/nginx/exports/log:/var/log/nginx \
   --publish 80:80 \
-  --detach nginx:latest
+  --detach nginx:1.6.2
