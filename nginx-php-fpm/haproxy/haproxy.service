@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /sbin/setuser root haproxy -f /etc/haproxy/haproxy.cfg -p /var/run/haproxy.pid

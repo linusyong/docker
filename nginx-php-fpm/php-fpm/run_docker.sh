@@ -13,7 +13,6 @@ fi
 # --name php-fpm : name the docker container php-fpm
 # --volume /home/core/docker/nginx-php-fpm/exports/html:/var/www/html : export volume for php / html files
 # --volume /home/core/docker/nginx-php-fpm/php-fpm/exports/etc:/etc/php5 : export volume php-fpm configuration files
-# --publish 9000:9000 : publish port 80 of container to port 9000 of host
 # --detach php-fpm:5.5.9 : run detached and using php-fpm:latest docker image
 #
 
@@ -22,4 +21,4 @@ docker run \
   --name php-fpm \
   --volume /home/core/docker/nginx-php-fpm/exports/html:/var/www/html \
   --volume /home/core/docker/nginx-php-fpm/php-fpm/exports/etc:/etc/php5 \
-  --publish 9000:9000 -d php-fpm:5.5.9
+  --detach php-fpm:5.5.9
