@@ -8,7 +8,7 @@ nginx/run_docker.sh
 echo -e "\nRunning HAProxy docker container..."
 haproxy/run_docker.sh
 
-sleep 1
+sleep 2
 x_powered_by=$(curl -Iq http://localhost/info.php 2>/dev/null | grep X-Powered-By)
 if [ "$x_powered_by" ]
 then
