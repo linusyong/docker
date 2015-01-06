@@ -11,7 +11,7 @@ server {
 		try_files $uri $uri/ =404;
 	}
 
-	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+	# pass the PHP scripts to FastCGI server listening on 9000
 	
 	location ~ \.php$ {
 		set_by_lua $php_fpm_addr 'return os.getenv("PHP_FPM_PORT_9000_TCP_ADDR")';

@@ -12,7 +12,7 @@ fi
 #
 # --name nginx : name the docker container nginx
 # --link php-fpm:php-fpm : link to php-fpm container
-# --volume /home/core/docker/nginx-php-fpm/exports/html:/var/www/html : export volume for php / html files
+# --volumes-from php-fpm : this gets all the volumes exported from php-fpm
 # --volume /home/core/docker/nginx-php-fpm/nginx/exports/etc:/etc/nginx : export volume for nginx configuration files
 # --volume /home/core/docker/nginx-php-fpm/nginx/exports/log:/var/log/nginx : export volume for nginx logs
 # --detach nginx:1.6.2 : run detached and using nginx:latest docker image
